@@ -1,26 +1,16 @@
-// GIVEN I am using a daily planner to create a schedule
-// WHEN I open the planner
-// THEN the current day is displayed at the top of the calendar
-// WHEN I scroll down
-// THEN I am presented with time blocks for standard business hours
-// WHEN I view the time blocks for that day
-// THEN each time block is color-coded to indicate whether it is in the past, present, or future
-// WHEN I click into a time block
-// THEN I can enter an event
-// WHEN I click the save button for that time block
-// THEN the text for that event is saved in local storage
-// WHEN I refresh the page
-// THEN the saved events persist
-
-var today = moment().format("dddd, MMMM do");
-var currentTime = parseInt(moment().format("k"));
-
-
-setInterval(currentTime, 60000);
-setInterval(today,3600000);
+// Option to instead make textarea editable span with button nested within.
+// Small styling changes would be needed.
+// Doing this would allow for a "blur" event to clear text if save is not clicked.
 
 $(document).ready(function() {
   $("#currentDay").text(today)
+
+  var today = moment().format("dddd, MMMM do");
+  var currentTime = parseInt(moment().format("k"));
+
+
+  setInterval(currentTime, 60000);
+  setInterval(today,3600000);
 
   $(".saveBtn").on("click",function() {
     var planLog = $(this).siblings(".description").val();
