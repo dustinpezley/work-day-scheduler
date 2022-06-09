@@ -11,4 +11,4 @@ Simple web-based app to plan your day. Current date is shown at the top and your
  https://dustinpezley.github.io/work-day-scheduler/
 
  ### Screenshot
- ![Screenshot](./assets/images/dustinpezley.github.io_work-day-scheduler_)
+ <img src="./assets/images/dustinpezley.github.io_work-day-scheduler_" alt="screenshot">
