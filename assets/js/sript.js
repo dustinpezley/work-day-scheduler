@@ -1,13 +1,11 @@
 // Option to instead make textarea editable span with button nested within.
 // Small styling changes would be needed.
 // Doing this would allow for a "blur" event to clear text if save is not clicked.
+var today = moment().format("dddd, MMMM do");
+var currentTime = parseInt(moment().format("k"));
 
 $(document).ready(function() {
   $("#currentDay").text(today)
-
-  var today = moment().format("dddd, MMMM do");
-  var currentTime = parseInt(moment().format("k"));
-
 
   setInterval(currentTime, 60000);
   setInterval(today,3600000);
@@ -26,15 +24,13 @@ $(document).ready(function() {
     if(!planInput) {
       return;
     } else {
-      $(this > ".description").val(planInput);
+      $(this).children(".description").val(planInput);
     };
   })
 
   function timeTracker() {
     $(".time-block").each(function() {
       var hour = parseInt($(this).closest(".row").attr("id"));
-      console.log(hour);
-      console.log(currentTime);
       if (hour > currentTime) {
         $(this).addClass("future");
       } else if (hour === currentTime) {
