@@ -12,3 +12,9 @@ Simple web-based app to plan your day. Current date is shown at the top and your
 
  ### Screenshot
 ![dustinpezley github io_work-day-scheduler_](https://user-images.githubusercontent.com/103615812/172963215-d0888d84-8c50-4eee-9f6b-ff59941586e9.png)
+
+### Credits
+ - Bootstrap 4.3.1
+ - Font-awesome 6.1.1
+ - jQuery 3.4.1
+ - Moment.js 2.24.0
