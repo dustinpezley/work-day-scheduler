@@ -1,15 +1,17 @@
-// Option to instead make textarea editable span with button nested within.
-// Small styling changes would be needed.
-// Doing this would allow for a "blur" event to clear text if save is not clicked.
+// Set global variables
 var today = moment().format("dddd, MMMM do");
 var currentTime = parseInt(moment().format("k"));
 
+
+// On document ready, all should load
 $(document).ready(function() {
   $("#currentDay").text(today)
 
+  // These should update periodically (in case a page is not refreshed)
   setInterval(currentTime, 60000);
   setInterval(today,3600000);
 
+  // On save, set description text and time in localStorage
   $(".saveBtn").on("click",function() {
     var planLog = $(this).siblings(".description").val();
     var timeBlock = $(this).closest(".row").attr("id");
@@ -17,6 +19,7 @@ $(document).ready(function() {
     localStorage.setItem(timeBlock, planLog);
   })
 
+  // Pull from localStorage for each respective row
   $(".row").each(function() {
     var hour = $(this).attr("id");
     var planInput = localStorage.getItem(hour);
@@ -28,6 +31,7 @@ $(document).ready(function() {
     };
   })
 
+  // Automatically shade time-blocks based on current time.
   function timeTracker() {
     $(".time-block").each(function() {
       var hour = parseInt($(this).closest(".row").attr("id"));
